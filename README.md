@@ -4,8 +4,8 @@
 ```shell
 # ----------
 # Scripts personalizados para o zsh
-SCRIPT_URL='https://gist.github.com/3843d3d8c6455e854641f6580167d271.git'
-FOLDER_NAME='.custom_script'
+SCRIPT_URL='[Link para o seu repositório]'
+FOLDER_NAME='.custom_terminal_script'
 DIR="$HOME/$FOLDER_NAME"
 
 # Se os arquivos já estiverem clonados apenas atualizar
