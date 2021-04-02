@@ -5,7 +5,7 @@
 # ----------
 # Scripts personalizados para o zsh
 SCRIPT_URL='[Link para o seu repositório]'
-FOLDER_NAME='.custom_terminal_script'
+FOLDER_NAME='.custom_terminal_scripts'
 DIR="$HOME/$FOLDER_NAME"
 
 # Se os arquivos já estiverem clonados apenas atualizar
