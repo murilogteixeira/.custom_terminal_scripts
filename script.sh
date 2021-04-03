@@ -1,10 +1,8 @@
 #!/bin/zsh
 
-DEFAULT_MSG='[custom-script]'
-
-update_zsh() {
+updtzsh() {
     source ~/.zshrc
-    echo "$DEFAULT_MSG scripts updated"
+    echo "Scripts updated"
 }
 
 alias cdgt="cd ~/git"
@@ -15,7 +13,7 @@ alias gtpll="git pull"
 alias gtpsh="git push"
 alias gtftch="git fetch"
 
-gtcmtmsg() {
+gtcmtm() {
     git commit -m $1
 }
 
