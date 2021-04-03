@@ -14,7 +14,7 @@ alias gtpsh="git push"
 alias gtftch="git fetch"
 
 gtcmtm() {
-    git commit -m $1
+    gtcmt -m $1
 }
 
 gtflw_option() {
