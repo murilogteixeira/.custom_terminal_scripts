@@ -14,9 +14,26 @@ alias gtadd="git add --all"
 alias gtcmt="git commit"
 alias gtcmtm="gtcmt -m"
 alias gtpll="git pull"
-alias gtpsh="git push"
 alias gtftch="git fetch"
 alias gtchck="git checkout"
+
+gtpsh() {
+    if [ $# -eq 0 ]
+    then
+        git push
+        return
+    fi
+
+    param=$1
+
+    case $param in
+    -u) 
+        branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+        git push -u origin $branch
+    ;;
+    *) echo 'Parâmetro incorreto';;
+    esac
+}
 
 gt() {
     __branch() {
