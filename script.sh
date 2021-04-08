@@ -55,6 +55,7 @@ gtpsh() {
 
 # Comandos git
 gt() {
+
     __branch() {
         param=$1
         branch=$2
