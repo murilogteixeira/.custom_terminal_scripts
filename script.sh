@@ -1,22 +1,41 @@
 #!/bin/zsh
 
-echo 'Atualizando scripts'
-git -C $HOME/.custom_terminal_scripts pull
+# Alias
+alias cdgt="cd ~/git"
+alias gtst="git status"
+alias gtpll="git pull"
+alias gtftch="git fetch"
+alias gtchck="git checkout"
 
+# Atualizar terminal
 updtzsh() {
     source ~/.zshrc
     echo "Updated scripts"
 }
 
-alias cdgt="cd ~/git"
-alias gtst="git status"
-alias gtadd="git add --all"
-alias gtcmt="git commit"
-alias gtcmtm="gtcmt -m"
-alias gtpll="git pull"
-alias gtftch="git fetch"
-alias gtchck="git checkout"
+# Comitar alterações
+gtcmt() {
+    if [ $# -eq 0 ]
+    then
+        git commit -m 'Auto commit: Update files'
+        return
+    fi
 
+    git commit -m $1
+}
+
+# Estagiar alterações
+gtadd() {
+    if [ $# -eq 0 ]
+    then
+        git add --all
+        return
+    fi
+
+    git add $1
+}
+
+# Subir alterações
 gtpsh() {
     if [ $# -eq 0 ]
     then
@@ -35,6 +54,7 @@ gtpsh() {
     esac
 }
 
+# Comandos git
 gt() {
     __branch() {
         param=$1
@@ -47,13 +67,13 @@ gt() {
             y|Y) git branch -d $branch;;
             esac
         ;;
-        -dr | --delete-remote)
-            printf "Tem certeza que deseja deletar a branch remota '$branch'? [y/n] "
-            read ans 
-            case $ans in
-            y|Y) git push origin --delete $branch;;
-            esac
-        ;;
+        # -dr | --delete-remote)
+        #     printf "Tem certeza que deseja deletar a branch remota '$branch'? [y/n] "
+        #     read ans 
+        #     case $ans in
+        #     y|Y) git push origin --delete $branch;;
+        #     esac
+        # ;;
         *) echo "Parâmetro $param desconhecido";;
         esac
     }
@@ -68,6 +88,7 @@ gt() {
     esac
 }
 
+# Git Flow
 gtflw() {
     __gtflw_option() {
         case $2 in
@@ -85,4 +106,3 @@ gtflw() {
     *) echo "[git flow $1] Parâmetro inválido ou incompleto";;
     esac
 }
-
