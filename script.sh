@@ -10,7 +10,6 @@ alias gtchck="git checkout"
 # Atualizar terminal
 updtzsh() {
     source ~/.zshrc
-    echo "Updated scripts"
 }
 
 # Comitar alterações
