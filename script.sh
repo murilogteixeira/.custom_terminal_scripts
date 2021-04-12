@@ -60,7 +60,7 @@ gt() {
         param=$1
         branch=$2
         case $param in
-        -dl | --delete-local) git branch -d $branch
+        -dl | --delete-local)
             printf "Tem certeza que deseja deletar a branch local '$branch'? [y/n] "
             read ans 
             case $ans in
@@ -74,6 +74,22 @@ gt() {
         #     y|Y) git push origin --delete $branch;;
         #     esac
         # ;;
+        -r | --auto-remove)
+            printf "Tem certeza que deseja deletar todas as branchs excluídas ou mescladas localmente? [y/n] "
+            read ans 
+            case $ans in
+            y|Y|s|S) git autoremove;;
+            *) echo 'Cancelado';;
+            esac
+        ;;
+        -ra | --auto-remove-all)
+            printf "Tem certeza que deseja deletar todas as branchs excluídas ou mescladas localmente e remotamente? [y/n] "
+            read ans 
+            case $ans in
+            y|Y|s|S) git autoremoveall;;
+            *) echo 'Cancelado';;
+            esac
+        ;;
         *) echo "Parâmetro $param desconhecido";;
         esac
     }
