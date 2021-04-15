@@ -90,6 +90,13 @@ gt() {
             *) echo 'Cancelado';;
             esac
         ;;
+        -f | --find-branch)
+            if [ -n $branch ]; then
+                git branch -ra | grep $branch
+            else
+                echo 'Insira o nome da branch ou parte dela para a busca'
+            fi
+        ;;
         *) echo "Parâmetro $param desconhecido";;
         esac
     }
