@@ -6,10 +6,25 @@ alias gtst="git status"
 alias gtpll="git pull"
 alias gtftch="git fetch"
 alias gtchck="git checkout"
+alias updtpod="pod update"
+alias instlpod="pod install"
+
+# Cria atalhos para todas as pastas que estão dentro de ~/git/
+for f in ~/git/*; do 
+    if [ -d "$f" ]; then
+        alias $(basename $f)="$f"
+    fi
+done
 
 # Atualizar terminal
 updtzsh() {
     source ~/.zshrc
+}
+
+# Pod functions
+clnpod() {
+    rm Podfile.lock
+    rm -rf Pods
 }
 
 # Comitar alterações
