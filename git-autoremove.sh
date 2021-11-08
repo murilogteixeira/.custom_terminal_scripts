@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-whitelist="master|main|dev|develop"
+whitelist="master|main|dev|develop|feature/*"
 git fetch --prune
 if [ -z "$1" ]; then
     list=$(git branch --merged | egrep -v "(^\*|$whitelist)") &&
