@@ -145,11 +145,12 @@ gtflw() {
     esac
 }
 
-# Converter vídeo para gif usando ffmpeg e gifsicle
-# brew install ffmpeg
-# brew install gifsicle
-# Como usar: 
-#    gifly video.mp4
+# Video to GIF converter using ffmpeg and gifsicle
+# Install dependencies:
+#   brew install ffmpeg
+#   brew install gifsicle
+# Usage: 
+#   gifly video.mp4
 
 gifly() {
     # get complete path
