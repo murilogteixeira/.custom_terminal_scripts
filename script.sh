@@ -144,3 +144,23 @@ gtflw() {
     *) echo "[git flow $1] Parâmetro inválido ou incompleto";;
     esac
 }
+
+# Criar GIF usando ffmpeg e gifsicle
+# brew install ffmpeg
+# brew install gifsicle
+
+gifly() {
+    # obter largura e altura
+    width=$(ffprobe -v error -select_streams v:0 -show_entries stream=width -of csv=s=x:p=0 "$1") 
+    height=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of csv=s=x:p=0 "$1")
+    # diminuir para 25% do tamanho
+    width=$(($width * 0.25))
+    height=$(($height * 0.25))
+    # remover casas decimais
+    width=${width%.*}
+    height=${height%.*}
+    # criar string no formato correto
+    resolution="${width}x${height}"
+    # converter video para gif
+    ffmpeg -i "$1" -s "$resolution" -pix_fmt rgb24 -r 20 -f gif -  | gifsicle --optimize=3 --delay=5 > "$2"
+}
