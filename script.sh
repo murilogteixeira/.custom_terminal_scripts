@@ -160,5 +160,5 @@ gifly() {
     # get video resolution
     resolution=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$1")
     # convert to gif
-    ffmpeg -i "$1" -s "$resolution" -pix_fmt rgb24 -r 20 -f gif -  | gifsicle --scale 0.4 --optimize=5 --delay=5 > "$filename.gif"
+    ffmpeg -i "$1" -s "$resolution" -pix_fmt rgb24 -r 30 -f gif -  | gifsicle --scale 0.4 --optimize=5 --delay=5 > "$filename.gif"
 }
