@@ -79,7 +79,7 @@ gt() {
             printf "Tem certeza que deseja deletar a branch local '$branch'? [y/n] "
             read ans 
             case $ans in
-            y|Y) git branch -d $branch;;
+            y|Y) git branch -D $branch;;
             esac
         ;;
         # -dr | --delete-remote)
