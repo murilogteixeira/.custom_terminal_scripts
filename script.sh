@@ -8,6 +8,8 @@ alias gtftch="git fetch"
 alias gtchck="git checkout"
 alias updtpod="pod update"
 alias instlpod="pod install"
+alias clnbuild="rm -rf ~/Library/Developer/Xcode/DerivedData/*"
+alias android="~/Library/Android/sdk/emulator/emulator @Pixel_4_API_31"
 
 # Cria atalhos para todas as pastas que estão dentro de ~/git/
 for f in ~/git/*; do 
