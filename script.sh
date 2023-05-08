@@ -11,6 +11,22 @@ alias instlpod="pod install"
 alias clnbuild="rm -rf ~/Library/Developer/Xcode/DerivedData/*"
 alias android="~/Library/Android/sdk/emulator/emulator @Pixel_4_API_31"
 
+# Git Alias
+
+setupGitAlias() {
+    git config --global alias.$1 $2
+}
+
+setupGitAlias cmt "commit -m"
+setupGitAlias st status
+setupGitAlias pl pull
+setupGitAlias ps push
+setupGitAlias plrbs "pull --rebase"
+setupGitAlias list-alias "config --get-regexp ^alias"
+setupGitAlias alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /"
+setupGitAlias add add --all
+setupGitAlias rmvbranch branch -D
+
 # Cria atalhos para todas as pastas que estão dentro de ~/git/
 for f in ~/git/*; do 
     if [ -d "$f" ]; then
