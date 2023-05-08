@@ -24,8 +24,8 @@ setupGitAlias ps push
 setupGitAlias plrbs "pull --rebase"
 setupGitAlias list-alias "config --get-regexp ^alias"
 setupGitAlias alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /"
-setupGitAlias add add --all
-setupGitAlias rmvbranch branch -D
+setupGitAlias add "add --all"
+setupGitAlias rmvbranch "branch -D"
 
 # Cria atalhos para todas as pastas que estão dentro de ~/git/
 for f in ~/git/*; do 
