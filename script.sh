@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+# Custom Prompt
+
+PROMPT='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%~ %{$reset_color%}$(git_prompt_info) 
+%{$fg_bold[magenta]%}➜ %{$reset_color%}'
+
 # Alias
 alias cdgt="cd ~/git"
 alias gtst="git status"
