@@ -7,7 +7,7 @@ PROMPT='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%~ %{$re
 
 # Alias
 alias cdgt="cd ~/git"
-alias gtst="git status"
+alias gtst="git "status -s"
 alias gtpll="git pull"
 alias gtftch="git fetch"
 alias gtchck="git checkout"
