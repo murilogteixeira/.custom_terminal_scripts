@@ -22,8 +22,8 @@ setupGitAlias() {
     git config --global alias.$1 $2
 }
 
-setupGitAlias cmt "commit -m"
-setupGitAlias st status
+setupGitAlias cmt "!f() { echo 'Commiting...'; git commit -m \"$1\"; echo 'Pushing...'; git push; }; f"
+setupGitAlias st "status -s"
 setupGitAlias pl pull
 setupGitAlias ps push
 setupGitAlias plrbs "pull --rebase"
