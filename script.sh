@@ -30,7 +30,9 @@ setupGitAlias plrbs "pull --rebase"
 setupGitAlias list-alias "config --get-regexp ^alias"
 setupGitAlias alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /"
 setupGitAlias add "add --all"
-setupGitAlias rmvbranch "branch -D"
+setupGitAlias rmv-branch "branch -D"
+setupGitAlias log-graph 'log --all --decorate --oneline --graph'
+setupGitAlias log-graph-full 'log --pretty=format:"%h | %ad | %an | %s" --graph --date=short'
 
 # Cria atalhos para todas as pastas que estão dentro de ~/git/
 for f in ~/git/*; do 
