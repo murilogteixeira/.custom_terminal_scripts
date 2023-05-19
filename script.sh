@@ -7,10 +7,6 @@ PROMPT='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%~ %{$re
 
 # Alias
 alias cdgt="cd ~/git"
-alias gtst="git "status -s"
-alias gtpll="git pull"
-alias gtftch="git fetch"
-alias gtchck="git checkout"
 alias updtpod="pod update"
 alias instlpod="pod install"
 alias clnbuild="rm -rf ~/Library/Developer/Xcode/DerivedData/*"
@@ -22,10 +18,13 @@ setupGitAlias() {
     git config --global alias.$1 $2
 }
 
+setupGitAlias op "cd ~/git"
 setupGitAlias cmt "!f() { echo 'Commiting...'; git commit -m \"$1\"; echo 'Pushing...'; git push; }; f"
 setupGitAlias st "status -s"
 setupGitAlias pl pull
 setupGitAlias ps push
+setupGitAlias ck checkout
+setupGitAlias ft fetch
 setupGitAlias plrbs "pull --rebase"
 setupGitAlias list-alias "config --get-regexp ^alias"
 setupGitAlias alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /"
