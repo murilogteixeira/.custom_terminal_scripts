@@ -28,7 +28,7 @@ setupGitAlias ft fetch
 setupGitAlias plrbs "pull --rebase"
 setupGitAlias list-alias "config --get-regexp ^alias"
 setupGitAlias alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /"
-setupGitAlias add "add --all"
+setupGitAlias adl "add --all"
 setupGitAlias rmv-branch "branch -D"
 setupGitAlias log-graph 'log --all --decorate --oneline --graph'
 setupGitAlias log-graph-full 'log --pretty=format:"%h | %ad | %an | %s" --graph --date=short'
