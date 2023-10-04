@@ -23,7 +23,7 @@ setupGitAlias cmt "!f() { echo 'Commiting...'; git commit -m \"\$1\"; echo 'Push
 setupGitAlias st "status -s"
 setupGitAlias pl pull
 setupGitAlias ps push
-setupGitAlias ck "!f() { git checkout \$1; git pull; }; f"
+setupGitAlias checkout
 setupGitAlias ft fetch
 setupGitAlias plrbs "pull --rebase"
 setupGitAlias list-alias "config --get-regexp ^alias"
