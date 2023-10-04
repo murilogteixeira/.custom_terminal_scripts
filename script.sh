@@ -19,11 +19,11 @@ setupGitAlias() {
 }
 
 setupGitAlias op "!cd ~/git"
-setupGitAlias cmt "!f() { echo 'Commiting...'; git commit -m \"\$1\"; echo 'Pushing...'; git push; }; f"
+setupGitAlias cmt "!f() { echo 'Commiting...'; git commit -m \"\$1\"; echo 'Pushing...'; git plrbs; git push; }; f"
 setupGitAlias st "status -s"
 setupGitAlias pl pull
 setupGitAlias ps push
-setupGitAlias ck checkout
+setupGitAlias ck "!f() { git checkout \$1; git pull; }; f"
 setupGitAlias ft fetch
 setupGitAlias plrbs "pull --rebase"
 setupGitAlias list-alias "config --get-regexp ^alias"
