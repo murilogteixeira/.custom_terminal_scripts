@@ -25,6 +25,7 @@ setupGitAlias pl pull
 setupGitAlias ps push
 setupGitAlias ck checkout
 setupGitAlias ft fetch
+setupGitAlias unstage "restore --staged"
 setupGitAlias plrbs "pull --rebase"
 setupGitAlias list-alias "config --get-regexp ^alias"
 setupGitAlias alias "! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /"
