@@ -2,8 +2,9 @@
 
 # Custom Prompt
 
-PROMPT='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%~ %{$reset_color%}$(git_prompt_info) 
-%{$fg_bold[magenta]%}➜ %{$reset_color%}'
+# PROMPT='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[green]%}%~ %{$reset_color%}$(git_prompt_info) 
+# %{$fg_bold[magenta]%}➜ %{$reset_color%}'
+ZSH_THEME="nicoulaj"
 
 # Alias
 alias cdgt="cd ~/git"
